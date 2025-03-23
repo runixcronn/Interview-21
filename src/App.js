@@ -8,7 +8,7 @@ export default function App() {
 
   // Next.js routing ile sayfaya yönlendirme
   const navigateToProtectedPage = () => {
-    router.push("/ProtectedPage");
+    router.push("/protectedPage");
   };
 
   return (
