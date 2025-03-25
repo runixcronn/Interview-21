@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export const Captcha = ({ onSuccess }) => {
+const Captcha = ({ onSuccess }) => {
   const [randomNumber, setRandomNumber] = useState(
     () => Math.floor(Math.random() * 6) + 1
   );
@@ -43,3 +43,5 @@ export const Captcha = ({ onSuccess }) => {
     </div>
   );
 };
+
+export default Captcha;
