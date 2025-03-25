@@ -2,7 +2,10 @@
 import { useState, useEffect } from "react";
 
 export const Captcha = ({ onSuccess }) => {
-  const [randomNumber, setRandomNumber] = useState(null);
+  const [randomNumber, setRandomNumber] = useState(
+    () => Math.floor(Math.random() * 6) + 1
+  );
+
   const [selectedNumber, setSelectedNumber] = useState(null);
 
   useEffect(() => {

@@ -12,6 +12,10 @@ export default function ProtectedPage() {
     setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return null; // veya bir loading gösterebilirsin
+  }
+
   const navigateToHome = () => {
     router.push("/");
   };
