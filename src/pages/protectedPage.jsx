@@ -1,34 +1,15 @@
-"use client";
-import "@/app/globals.css";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Captcha } from "./components/Captcha";
+import "../app/globals.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Captcha from "./components/Captcha";
 
 export default function ProtectedPage() {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [captchaPassed, setCaptchaPassed] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null; // veya bir loading gösterebilirsin
-  }
 
   const navigateToHome = () => {
-    router.push("/");
+    navigate("/");
   };
-
-  // Only render client-side content after component has mounted
-  if (!isMounted) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <p>Loading...</p>
-      </div>
-    );
-  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
