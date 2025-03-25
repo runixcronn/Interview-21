@@ -1,7 +1,7 @@
 import "../app/globals.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Captcha from "./components/Captcha";
+import Captcha from "@/pages/components/Captcha";
 
 export default function ProtectedPage() {
   const navigate = useNavigate();
