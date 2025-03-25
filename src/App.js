@@ -5,7 +5,7 @@ import {
   Routes,
   useNavigate,
 } from "react-router-dom";
-import ProtectedPage from "./pages/ProtectedPage.jsx";
+import ProtectedPage from "@/pages/ProtectedPage";
 
 export default function App() {
   return (
