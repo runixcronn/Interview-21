@@ -1,15 +1,12 @@
-import "../app/globals.css";
+"use client";
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import Captcha from "./Captcha";
 
-export default function ProtectedPage() {
-  const navigate = useNavigate();
+export default function ProtectedPage({ navigate }) {
+  const router = useRouter();
   const [captchaPassed, setCaptchaPassed] = useState(false);
-
-  const navigateToHome = () => {
-    navigate("/");
-  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -20,7 +17,7 @@ export default function ProtectedPage() {
       )}
       <button
         className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700"
-        onClick={navigateToHome}
+        onClick={navigate}
       >
         Ana Sayfaya Dön
       </button>

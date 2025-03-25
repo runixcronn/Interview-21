@@ -1,15 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Captcha = ({ onSuccess }) => {
-  const [randomNumber, setRandomNumber] = useState(
-    () => Math.floor(Math.random() * 6) + 1
-  );
-
+  const [randomNumber] = useState(Math.floor(Math.random() * 6) + 1);
   const [selectedNumber, setSelectedNumber] = useState(null);
-
-  useEffect(() => {
-    setRandomNumber(Math.floor(Math.random() * 6) + 1);
-  }, []);
 
   const handleVerify = () => {
     if (selectedNumber === randomNumber) {
